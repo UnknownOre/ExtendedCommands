@@ -30,7 +30,7 @@ abstract class ParentalCommand extends CustomCommand{
 
     public function findSubCommand(string $command): ?CustomCommand{
         foreach ($this->subCommands as $subCommand) {
-            if (strcasecmp($subCommand->getName(), $command) == 0) {
+            if (strcasecmp($subCommand->getName(), $command) === 0) {
                 return $subCommand;
             }
             if (in_array($command, $subCommand->getAliases())) {
